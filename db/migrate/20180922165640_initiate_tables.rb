@@ -11,9 +11,9 @@ class InitiateTables < ActiveRecord::Migration[5.1]
     create_table :stocks do |t|
       t.string :name
       t.string :mnemonic
-      t.integer :nb_bull
-      t.integer :nb_bear
-      t.integer :nb_neutral
+      t.integer :nb_buy, default: 0
+      t.integer :nb_sell, default: 0
+      t.integer :nb_neutral, default: 0
       t.timestamps
     end
 

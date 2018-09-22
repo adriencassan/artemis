@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 20180922170318) do
   create_table "stocks", force: :cascade do |t|
     t.string "name"
     t.string "mnemonic"
-    t.integer "nb_bull"
-    t.integer "nb_bear"
-    t.integer "nb_neutral"
+    t.integer "nb_buy", default: 0
+    t.integer "nb_sell", default: 0
+    t.integer "nb_neutral", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
