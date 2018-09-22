@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180922155923) do
+ActiveRecord::Schema.define(version: 20180922170318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "role"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stock_analysis", force: :cascade do |t|
+    t.bigint "profile_id"
+    t.bigint "stock_id"
+    t.string "analysis"
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_stock_analysis_on_profile_id"
+    t.index ["stock_id"], name: "index_stock_analysis_on_stock_id"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "name"
+    t.string "mnemonic"
+    t.integer "nb_bull"
+    t.integer "nb_bear"
+    t.integer "nb_neutral"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +53,14 @@ ActiveRecord::Schema.define(version: 20180922155923) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "profile_id"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["profile_id"], name: "index_users_on_profile_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "stock_analysis", "profiles"
+  add_foreign_key "stock_analysis", "stocks"
+  add_foreign_key "users", "profiles"
 end
