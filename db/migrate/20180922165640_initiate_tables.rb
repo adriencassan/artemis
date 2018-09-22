@@ -17,7 +17,7 @@ class InitiateTables < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    create_table :stock_analysis do |t|
+    create_table :stock_analyses do |t|
       t.references :profile, foreign_key: true
       t.references :stock, foreign_key: true
       t.string :analysis

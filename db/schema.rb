@@ -24,15 +24,15 @@ ActiveRecord::Schema.define(version: 20180922170318) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "stock_analysis", force: :cascade do |t|
+  create_table "stock_analyses", force: :cascade do |t|
     t.bigint "profile_id"
     t.bigint "stock_id"
     t.string "analysis"
     t.string "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id"], name: "index_stock_analysis_on_profile_id"
-    t.index ["stock_id"], name: "index_stock_analysis_on_stock_id"
+    t.index ["profile_id"], name: "index_stock_analyses_on_profile_id"
+    t.index ["stock_id"], name: "index_stock_analyses_on_stock_id"
   end
 
   create_table "stocks", force: :cascade do |t|
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20180922170318) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "stock_analysis", "profiles"
-  add_foreign_key "stock_analysis", "stocks"
+  add_foreign_key "stock_analyses", "profiles"
+  add_foreign_key "stock_analyses", "stocks"
   add_foreign_key "users", "profiles"
 end

@@ -1,0 +1,62 @@
+<div class="page-wrapper">
+  <div class="grid">
+
+    <div class="row">
+
+      <div class="col-xs-12">
+        <div class="page-title">
+          <h3>Titre de la page</h3>
+          <div class="page-title-sub"></div>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="card full-height">
+          <div class="card-title">Liste</div>
+          <div class="card-content">
+            <div class="list-container">
+              <div class="list-group h-75 d-inline-block">
+                <% @stocks.each do |stock| %>
+                  <%= link_to "#{stock.name}", stocks_path(id: "#{stock.id}"), class: "list-group-item list-group-item-action" %>
+
+                  <!--# <a href="#" class="list-group-item list-group-item-action"><%= stock.name %></a> -->
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6">
+        <div class="card">
+            <div class="card-title">Valeur</div>
+            <div class="card-content">
+              <div class="row">
+                <div class="col-xs-12">
+                  <% if @stock.nil? %>
+                    <p>Pas de valeur selectionnée</p>
+                  <% else %>
+                    <%= @stock.name %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 list-group-item">
+                  <p>Bear</p>
+                </div>
+                <div class="col-xs-4 list-group-item">
+                  <p>Neutral</p>
+                </div>
+                <div class="col-xs-4 list-group-item">
+                  <p>Bull</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,60 @@
+.form-control {
+  border-radius: 20px;
+}
+
+.form-inline-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-control-label {
+  width: 80px;
+}
+
+.form-control-custom {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.form-icon {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.form-group-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-label{
+  width: 100px;
+  margin-right: 5px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+}
+
+
+.from-group-btns{
+  display: flex;
+}
+
+.form-control-column {
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 12px;
+  display: block;
+  //padding: 5px 0;
+  //align-items: center;
+}
+
+.form-width {
+  width: 100%;
+}
