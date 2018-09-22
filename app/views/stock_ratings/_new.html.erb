@@ -1,0 +1,9 @@
+<div class="form-wrapper">
+  <%= simple_form_for [stock, stock_rating] do |f| %>
+    <%= f.input :value, as: :radio_buttons, collection: ['Buy', 'Neutral', 'Sell'], selected: current_user.profile.my_analyse(stock)%>
+    <%= f.input :analysis %>
+    <div class="submit-btn-wrapper">
+      <%= f.button :submit,class: "blue-btn round-btn sm-btn" %>
+    </div>
+  <% end %>
+</div>

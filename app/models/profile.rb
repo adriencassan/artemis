@@ -4,6 +4,11 @@ class Profile < ApplicationRecord
 
 
   def my_analyse(stock)
-    stock_ratings.order(created_at: desc).first.value || "Neutral"
+    analyse = stock_ratings.where(stock: stock).order(created_at: :desc).first
+    analyse.nil? ? "Neutral" : analyse.value
+  end
+
+  def initials
+    first_name[0].to_s + last_name[0].to_s
   end
 end
