@@ -4,12 +4,10 @@
 }
 
 .list-container {
-
     margin-bottom: 10px;
     overflow:scroll;
     height: calc(100vh - 220px);
     border: 1px solid #ddd;
-
 }
 
 .list-custom-item {
@@ -18,4 +16,6 @@
 
 .list-custom-inline {
   display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
 }

@@ -1,9 +1,21 @@
 <div class="form-wrapper">
   <%= simple_form_for [stock, stock_rating] do |f| %>
-    <%= f.input :value, as: :radio_buttons, collection: ['Buy', 'Neutral', 'Sell'], selected: current_user.profile.my_analyse(stock)%>
-    <%= f.input :analysis %>
-    <div class="submit-btn-wrapper">
-      <%= f.button :submit,class: "blue-btn round-btn sm-btn" %>
+    <div class="row form-row">
+      <div class="col-xs-3">Recommandation</div>
+      <div class="col-xs-9">
+        <%= f.input :value, label: "", collection: ["Buy","Sell","Neutral"], as: :radio_buttons, wrapper_class: "inline" %>
+      </div>
+    </div>
+    <div class="row form-row">
+      <div class="col-xs-3">Analyse</div>
+      <div class="col-xs-9">
+        <%= f.input :analysis, as: :text, label: false, placeholder: "Votre message", input_html: {class: "form-control-custom", row: 3}%>
+      </div>
+    </div>
+    <div class="row form-row">
+      <div class="col-xs-12 ">
+        <%= f.button :submit, "Envoyer", class: "blue-btn round-btn sm-btn pull-right" %>
+      </div>
     </div>
   <% end %>
 </div>

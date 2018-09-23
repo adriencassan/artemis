@@ -37,12 +37,33 @@
   padding: 10px;
   margin-top: 5px;
   border-radius: 5px;
-
-
 }
+
+.card-row {
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.card-row-header {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card-row-cell {
+  text-align: center;
+}
+
+.card-row-cell.grey {
+  border: 1px solid rgba(220,224,244,0.4);
+}
+
+
+
 
 .full-height{
     height: calc(100vh - 150px);
+    overflow: scroll;
   }
 
 .card-title{

@@ -1,0 +1,29 @@
+.round-tag {
+  width: 60px;
+  border-radius: 50px;
+  //border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  //border-style: solid;
+  //border-width: 1px;
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  margin: 5px 5px 0 0 ;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.round-tag.green {
+    background-color: $green;
+    color: white;
+  }
+
+.round-tag.gray {
+    background-color: $gray;
+    color: white;
+}
+
+.round-tag.red {
+    background-color: $red;
+    color: white;
+}

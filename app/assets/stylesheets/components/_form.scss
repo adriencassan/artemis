@@ -1,5 +1,15 @@
+.form-wrapper {
+  margin: 5px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+
 .form-control {
   border-radius: 20px;
+}
+
+.form-group {
+  margin: 5px;
 }
 
 .form-inline-custom {
@@ -30,22 +40,28 @@
   align-items: center;
 }
 
-.form-label{
-  width: 100px;
-  margin-right: 5px;
+.form-check {
+  display: inline;
+  margin-right: 10px;
 }
+
+.col-form-label{
+  margin: 0px;
+  border: none;
+}
+
 
 .form-row {
   display: flex;
   align-items: center;
+  margin-bottom: 2px;
 }
-
 
 .from-group-btns{
   display: flex;
 }
 
-.form-control-column {
+.form-group-column {
   width: 80px;
   height: 30px;
   border-radius: 5px;
@@ -53,8 +69,4 @@
   display: block;
   //padding: 5px 0;
   //align-items: center;
-}
-
-.form-width {
-  width: 100%;
 }

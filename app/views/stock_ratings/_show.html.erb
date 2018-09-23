@@ -1,0 +1,21 @@
+<div class="comment">
+  <div class="comment-left">
+    <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    <div class="round-tag <%= stock_rating.color_tag-%>"><%= stock_rating.value %></div>
+  </div>
+  <div class="comment-body">
+    <div class="comment-header">
+      <p><strong><%= stock_rating.profile.first_name %></strong></p>
+      <div class="comment-date">
+        <%=  stock_rating.ago == 0 ? "Aujourd'hui" : "#{stock_rating.ago} j" %>
+      </div>
+    </div>
+    <p></p>
+    <p>
+      <%= stock_rating.analysis %>
+    </p>
+  </div>
+  <div class="comment-status">
+  </div>
+</div>
+
