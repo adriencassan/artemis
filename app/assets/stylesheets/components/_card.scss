@@ -50,6 +50,13 @@
   font-weight: bold;
 }
 
+
+.card-row-header-title {
+  background-color: $dark-blue;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
 .card-row-cell {
   text-align: center;
 }
@@ -62,7 +69,7 @@
 
 
 .full-height{
-    height: calc(100vh - 150px);
+    height: calc(100vh - 100px);
     overflow: scroll;
   }
 
