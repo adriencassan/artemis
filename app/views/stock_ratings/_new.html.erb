@@ -3,7 +3,7 @@
     <div class="row form-row">
       <div class="col-xs-3">Recommandation</div>
       <div class="col-xs-9">
-        <%= f.input :value, label: "", collection: ["Buy","Sell","Neutral"], as: :radio_buttons, wrapper_class: "inline" %>
+        <%= f.input :value, label: "", collection: ["Buy","Sell","Neutral"], as: :radio_buttons, wrapper_class: "inline", error: 'Username is mandatory, please specify one' %>
       </div>
     </div>
     <div class="row form-row">

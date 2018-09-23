@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+  mount_uploader :avatar, PhotoUploader
+
   has_one :user
   has_many :stock_ratings
 

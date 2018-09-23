@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(version: 20180922170318) do
     t.string "last_name"
     t.string "first_name"
     t.string "role"
-    t.boolean "active"
+    t.string "avatar"
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180922170318) do
     t.bigint "profile_id"
     t.bigint "stock_id"
     t.string "analysis"
-    t.string "value"
+    t.string "value", default: "Neutral"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_stock_ratings_on_profile_id"
@@ -54,7 +55,6 @@ ActiveRecord::Schema.define(version: 20180922170318) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "profile_id"
-    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_id"], name: "index_users_on_profile_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

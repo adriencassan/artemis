@@ -4,6 +4,7 @@ class InitiateTables < ActiveRecord::Migration[5.1]
       t.string :last_name
       t.string :first_name
       t.string :role
+      t.string :avatar
       t.boolean :active, default: true
       t.timestamps
     end
@@ -21,7 +22,7 @@ class InitiateTables < ActiveRecord::Migration[5.1]
       t.references :profile, foreign_key: true
       t.references :stock, foreign_key: true
       t.string :analysis
-      t.string :value
+      t.string :value, default: "Neutral"
       t.timestamps
     end
   end

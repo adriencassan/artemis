@@ -1,0 +1,56 @@
+<div class="row card-row">
+  <div class="list-custom-item">
+    <div class="col-xs-12">
+      <div class="card-row-header">
+        <div style="font-weight: bold"><%= stock.name %></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row card-row">
+  <div class="col-xs-4">
+    <div class="card-row-cell gray">
+      <div class="list-custom-inline">
+        <div class="round-tag red">Sell</div>
+      </div>
+      <div class="list-custom-inline">
+        <%  stock.sell_profiles.each do |profile| %>
+        <div class="avatar-initials"><%= profile.initials %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="card-row-cell gray">
+      <div class="list-custom-inline">
+        <div class="round-tag gray">Neutral</div>
+      </div>
+      <div class="list-custom-inline">
+        <%  stock.neutral_profiles.each do |profile| %>
+        <div class="avatar-initials"><%= profile.initials %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="card-row-cell gray">
+      <div class="list-custom-inline">
+        <div class="round-tag green">Buy</div>
+      </div>
+      <div class="list-custom-inline">
+        <%  stock.buy_profiles.each do |profile| %>
+        <div class="avatar-initials"><%= profile.initials %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+ <%= render "stock_ratings/new", stock: stock, stock_rating: stock_rating_new %>
+</div>
+<div class="comments">
+  <% stock.stock_ratings.order(created_at: :desc).each do |rating| %>
+  <%= render "stock_ratings/show", stock_rating: rating %>
+  <% end %>
+</div>

@@ -10,91 +10,40 @@
         </div>
       </div>
 
-    <div class="row">
-      <div class="col-xs-6">
-        <div class="card full-height">
-          <div class="card-title">Liste</div>
-          <div class="card-content">
-            <div class="list-container">
-              <div class="list-group h-75 d-inline-block">
-                <% @stocks.each do |stock| %>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="card full-height">
+            <div class="card-title">Liste</div>
+            <div class="card-content">
+              <div class="list-container">
+                <div class="list-group h-75 d-inline-block">
+                  <% @stocks.each do |stock| %>
                   <%= link_to "#{stock.name}", stocks_path(id: "#{stock.id}"), class: "list-group-item list-group-item-action" %>
-                <% end %>
+                  <% end %>
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6">
+          <div class="card full-height">
+            <div class="card-title">Valeur</div>
+            <div class="card-content">
+              <% if @stock.nil? %>
+              <div class="col-xs-12">
+                <div class="card-row-header">
+                  <div style="font-weight: bold">Pas de valeur selectionnée</div>
+                </div>
+              </div>
+              <% else %>
+              <%= render "stocks/show", stock: @stock, stock_rating_new: @stock_rating_new %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-xs-6">
-        <div class="card full-height">
-            <div class="card-title">Valeur</div>
-            <div class="card-content">
-              <div class="row card-row">
-                <div class="list-custom-item">
-                  <div class="col-xs-12">
-                    <div class="card-row-header">
-                      <% if @stock.nil? %>
-                        <p>Pas de valeur selectionnée</p>
-                      <% else %>
-                        <div style="font-weight: bold"><%= @stock.name %></div>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row card-row">
-                <div class="col-xs-4">
-                  <div class="card-row-cell gray">
-                    <div class="list-custom-inline">
-                      <div class="round-tag red">Sell</div>
-                    </div>
-                    <div class="list-custom-inline">
-                      <%  @stock.sell_profiles.each do |profile| %>
-                        <div class="avatar-initials"><%= profile.initials %></div>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="card-row-cell gray">
-                    <div class="list-custom-inline">
-                      <div class="round-tag gray">Neutral</div>
-                    </div>
-                    <div class="list-custom-inline">
-                      <%  @stock.neutral_profiles.each do |profile| %>
-                        <div class="avatar-initials"><%= profile.initials %></div>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="card-row-cell gray">
-                    <div class="list-custom-inline">
-                      <div class="round-tag green">Buy</div>
-                    </div>
-                    <div class="list-custom-inline">
-                      <%  @stock.buy_profiles.each do |profile| %>
-                        <div class="avatar-initials"><%= profile.initials %></div>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div>
-                 <%= render "stock_ratings/new", stock: @stock, stock_rating: @stock_rating_new %>
-              </div>
-              <div class="comments">
-                  <% @stock.stock_ratings.order(created_at: :desc).each do |rating| %>
-                    <%= render "stock_ratings/show", stock_rating: rating %>
-                  <% end %>
-              </div>
-            </div>
-        </div>
-      </div>
     </div>
-
-
   </div>
-</div>
